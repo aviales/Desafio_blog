@@ -1,0 +1,14 @@
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this user from being saved:</h2>
+        <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% else %>
+    <h1>Te registraste con exito</h1>
+    <li><%= link_to "Volver a inicio", posts_index_path%></li>
+    <li><%= link_to "Ir a Dashboard", posts_dashboard_path%></li>
+<% end %>

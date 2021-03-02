@@ -1,0 +1,19 @@
+<h1>INDEX</h1>
+
+<table class="table">
+    <tr>
+        <th>Titulo</th>
+        <th>Fecha de ingreso</th>
+        <th>Imagen</th>
+        <th>Contenido</th>
+    </tr>
+    <% @posts.each do |post| %>
+        <tr>
+            <td><%= post.title %></td>
+            <td><%= post.created_at %></td>
+            <td><%= post.image_url %></td>
+            <td><%= post.content %></td>
+        </tr>
+    <% end %>
+    <li><%= link_to "Ir a Dashboard", posts_dashboard_path%></li>
+  </table>
